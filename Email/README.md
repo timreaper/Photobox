@@ -9,4 +9,4 @@ This is the code created for the email part of the Photobox assessment. It took 
 - Bootstrap (for the CSS framework)
 - Normalize (for making all styling more consistent between browsers)
 
-You can view the page [here](https://rawgit.com/timreaper/Photobox/Email/master/dist/index.html).
+You can view the page [here](https://rawgit.com/timreaper/Photobox/master/Email/dist/index.html).
