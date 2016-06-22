@@ -1,0 +1,31 @@
+.footer {
+
+  &__links {
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    a {
+      color: grey;
+      margin: 0 5px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__info {
+    background-color: #ededed;
+    padding: 20px;
+    p {
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  }
+
+  &__icons {
+    text-align: right;
+    a {
+      opacity: 0.5;
+      text-decoration: none;
+    }
+  }
+
+}

@@ -1,0 +1,51 @@
+.carousel-caption {
+  bottom: 200px;
+  left: 135px;
+  padding-bottom: 30px;
+  right: unset;
+  text-align: left;
+
+  button {
+    font-size: 24px;
+    padding: 10px 35px;
+  }
+
+  h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+}
+
+.carousel-indicators {
+  bottom: unset;
+  top: 20px;
+}
+
+.carousel-indicators li {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: medium none;
+  color: white;
+  display: inline;
+  margin: 0 5px;
+  padding: 5px 15px;
+}
+
+.carousel-indicators .active {
+  color: black;
+  margin: 0 5px;
+}
+
+.three-steps {
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  color: white;
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  img {
+    margin-bottom: 10px;
+  }
+}

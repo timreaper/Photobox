@@ -1,0 +1,130 @@
+<div class="registration-container">
+    <h1>Registration</h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <form>
+                <div class="form-group">
+                    <label for="first_name_input">First name *</label>
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default selected-title dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Title <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu titles-list">
+                                <li><a href="javascript:void(0)" data-value="Mr">Mr</a></li>
+                                <li><a href="javascript:void(0)" data-value="Ms">Ms</a></li>
+                                <li><a href="javascript:void(0)" data-value="Mrs">Mrs</a></li>
+                                <li><a href="javascript:void(0)" data-value="Miss">Miss</a></li>
+                                <li><a href="javascript:void(0)" data-value="Dr">Dr</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control" id="first_name_input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email_input">Lastname *</label>
+                    <input type="text" class="form-control" id="last_name_input">
+                </div>
+                <div class="form-group">
+                    <label for="email_input">Email address *</label>
+                    <input type="email" class="form-control" id="email_input">
+                </div>
+                <div class="form-group">
+                    <label for="password_input">Password *</label>
+                    <input type="password" class="form-control" id="password_input">
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password_input">Re-enter password *</label>
+                    <input type="password" class="form-control" id="confirm_password_input">
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="save_money"> I'd like to save money, get free stuff & be the first to
+                        know
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="share_details"> Share my details with selected partners
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default submit-registration">Create account</button>
+
+                <div>
+                    <i class="italic">
+                        By pressing this button, you accept the Photobox <a>Terms of Use</a> & <a>Privacy Policy</a>
+                    </i>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <p>I already have a Photobox account</p>
+            <button class="btn">
+                <i class="glyphicon glyphicon-user"></i> Log In
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('.titles-list').on('click', 'li a', function () {
+            $('.selected-title').html($(this).data('value') + ' <span class="caret"></span>');
+            $(this).addClass('user-title-picked');
+        });
+
+        $('.submit-registration').on('click', function () {
+            var form_data = {};
+            form_data['title'] = $('.user-title-picked').data('value');
+            form_data['first_name'] = $('#first_name_input').val();
+            form_data['last_name'] = $('#last_name_input').val();
+            form_data['email'] = $('#email_input').val();
+            form_data['password'] = $('#password_input').val();
+            form_data['save_money_preference'] = $('#save_money').prop('checked');
+            form_data['share_details_preference'] = $('#share_details').prop('checked');
+
+            var errors = '';
+            if (form_data['title'] === '') {
+                errors += '\nPlease select a title.';
+            }
+
+            if (form_data['first_name'] === '') {
+                errors += '\nPlease input in your first name.';
+            }
+
+            if (form_data['last_name'] === '') {
+                errors += '\nPlease input in your last name.';
+            }
+
+            if (form_data['email'] === '') {
+                errors += '\nPlease input in your email address.';
+            }
+
+            if (form_data['password'] === '') {
+                errors += '\nPlease type in a password.';
+            }
+
+            if ($('#confirm_password_input').val() === '') {
+                errors += '\nPlease confirm your password.';
+            }
+
+            if (form_data['password'] !== $('#confirm_password_input').val()) {
+                errors += '\nPlease enter in the same password in the Password & Confirm Password fields.';
+            }
+
+            if (form_data['password'].length < 8) {
+                errors += '\nPlease type in a password longer than 8 characters.';
+            }
+
+            console.log(form_data);
+            if (errors !== '') {
+                alert('The following issues need to be corrected before you can register. \n' + errors);
+                return false;
+            } else {
+                alert('Thanks ' + form_data['first_name'] + ' for registering!');
+                window.location.hash = '';
+            }
+
+        });
+    </script>
+</div>

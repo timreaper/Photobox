@@ -1,0 +1,29 @@
+//****************************************************//
+//************ App/Custom SCSS Stylesheets ***********//
+//****************************************************//
+
+////////////////////////////////////////////////////////
+// Modules (global variables, helper classes, mixins  //
+// & functions)                                       //
+////////////////////////////////////////////////////////
+
+@import "modules/variables";
+@import "modules/helpers";
+@import "modules/mixins";
+
+////////////////////////////////////////////////////////
+// Partials (stylesheets for specific components)     //
+////////////////////////////////////////////////////////
+
+@import "partials/buttons";
+@import "partials/footer";
+@import "partials/header";
+@import "partials/menu";
+
+////////////////////////////////////////////////////////
+// Sections (stylesheets for page specific code)      //
+////////////////////////////////////////////////////////
+
+@import "sections/home";
+@import "sections/main";
+@import "sections/register";
